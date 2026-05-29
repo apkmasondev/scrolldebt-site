@@ -11,10 +11,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -23,6 +26,7 @@ body {
   font-family: 'Space Mono', 'JetBrains Mono', monospace;
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -312,19 +316,13 @@ main {
   letter-spacing: -0.5px;
 }
 
-.swipe-hint {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
-  font-style: italic;
-  opacity: 0.8;
-}
-
 .gallery-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  margin: 0 -5%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 60px;
 }
 
 .gallery-btn {
@@ -338,20 +336,19 @@ main {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 100;
   transition: all 0.3s ease;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  backdrop-filter: blur(5px);
 }
 
 .gallery-btn.prev {
-  left: 2%;
+  left: 0;
 }
 
 .gallery-btn.next {
-  right: 2%;
+  right: 0;
 }
 
 .gallery-btn:hover {
@@ -365,17 +362,18 @@ main {
   display: flex;
   overflow-x: auto;
   gap: 1.5rem;
-  padding: 1rem 5% 3rem 5%;
+  padding: 1rem 5px 3rem 5px;
   margin: 0;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   flex: 1;
   min-width: 0;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .gallery-scroll::-webkit-scrollbar {
-  height: 6px;
+  display: none;
 }
 
 .gallery-scroll::-webkit-scrollbar-track {
@@ -728,6 +726,19 @@ footer {
   }
   .gallery h2 {
     font-size: 2rem;
+  }
+  .gallery-wrapper {
+    padding: 0;
+    max-width: 100%;
+  }
+  .gallery-scroll {
+    padding: 1rem 5% 3rem 5%;
+    margin: 0 -5%;
+    scrollbar-width: auto;
+  }
+  .gallery-scroll::-webkit-scrollbar {
+    display: block;
+    height: 6px;
   }
   .gallery-item {
     width: 240px;
