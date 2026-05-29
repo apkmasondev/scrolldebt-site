@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ScrollDebt converts your mindless doomscrolling into brutal reality checks. Track wasted time, face sarcastic roasts, and reclaim your life. 100% offline, zero data collection.">
+    <meta property="og:title" content="ScrollDebt - Reclaim Your Time">
+    <meta property="og:description" content="ScrollDebt converts your mindless doomscrolling into brutal reality checks.">
+    <meta property="og:image" content="https://apkmasondev.github.io/scrolldebt-site/mockup_1.png">
+    <meta property="og:url" content="https://apkmasondev.github.io/scrolldebt-site/">
+    <link rel="icon" type="image/png" href="apkmason_logo_premium.png">
     <title>ScrollDebt - Reclaim Your Time</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -31,11 +36,11 @@
             <a href="changelog.html" class="nav-link" data-lang="de">Änderungsprotokoll</a>
         </nav>
         <div class="lang-switcher">
-            <button onclick="setLang('en')" id="btn-en">EN</button>
-            <button onclick="setLang('pl')" id="btn-pl">PL</button>
-            <button onclick="setLang('es')" id="btn-es">ES</button>
-            <button onclick="setLang('fr')" id="btn-fr">FR</button>
-            <button onclick="setLang('de')" id="btn-de">DE</button>
+            <button id="btn-en" aria-label="Switch to English">EN</button>
+            <button id="btn-pl" aria-label="Switch to Polish">PL</button>
+            <button id="btn-es" aria-label="Switch to Spanish">ES</button>
+            <button id="btn-fr" aria-label="Switch to French">FR</button>
+            <button id="btn-de" aria-label="Switch to German">DE</button>
         </div>
     </header>
 
@@ -54,11 +59,11 @@
                 <p data-lang="fr">ScrollDebt n'est pas une autre jolie application de gestion du temps avec des graphiques pastel. C'est un miroir numérique intransigeant ancré dans un minimalisme sombre, conçu pour frapper votre conscience.</p>
                 <p data-lang="de">ScrollDebt ist nicht nur eine weitere niedliche Zeitmanagement-App mit pastellfarbenen Diagrammen. Es ist ein kompromissloser digitaler Spiegel im Geiste des dunklen Minimalismus, der dein Gewissen treffen soll.</p>
                 
-                <a href="#" class="btn-primary" data-lang="en">Get it on Google Play</a>
-                <a href="#" class="btn-primary" data-lang="pl">Pobierz z Google Play</a>
-                <a href="#" class="btn-primary" data-lang="es">Consíguelo en Google Play</a>
-                <a href="#" class="btn-primary" data-lang="fr">Disponible sur Google Play</a>
-                <a href="#" class="btn-primary" data-lang="de">Hol es dir bei Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.example.scrolldebt" class="btn-primary" data-lang="en">Get it on Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.example.scrolldebt" class="btn-primary" data-lang="pl">Pobierz z Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.example.scrolldebt" class="btn-primary" data-lang="es">Consíguelo en Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.example.scrolldebt" class="btn-primary" data-lang="fr">Disponible sur Google Play</a>
+                <a href="https://play.google.com/store/apps/details?id=com.example.scrolldebt" class="btn-primary" data-lang="de">Hol es dir bei Google Play</a>
             </div>
             <div class="hero-image">
                 <img src="mockup_1.png" alt="ScrollDebt App Mockup">
@@ -156,15 +161,33 @@
 
     <script>
         function setLang(lang) {
+            document.documentElement.lang = lang;
             document.body.className = 'lang-' + lang;
             document.querySelectorAll('.lang-switcher button').forEach(btn => {
                 btn.classList.toggle('active', btn.id === 'btn-' + lang);
             });
-            localStorage.setItem('scrolldebt-lang', lang);
+            try {
+                localStorage.setItem('scrolldebt-lang', lang);
+            } catch (e) {
+                console.warn('localStorage is not available');
+            }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('scrolldebt-lang');
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lang = e.target.id.replace('btn-', '');
+                    setLang(lang);
+                });
+            });
+
+            let saved = null;
+            try {
+                saved = localStorage.getItem('scrolldebt-lang');
+            } catch (e) {
+                console.warn('localStorage is not available');
+            }
+            
             const browser = navigator.language.slice(0, 2);
             const supported = ['en', 'pl', 'es', 'fr', 'de'];
             const lang = supported.includes(saved) ? saved 

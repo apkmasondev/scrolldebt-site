@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ScrollDebt version history and changelog. Track all updates, new features, and improvements to the anti-doomscrolling app.">
+    <meta name="description" content="Follow the evolution of ScrollDebt. Read release notes, new features, and improvements to our brutal screen time tracker.">
+    <meta property="og:title" content="ScrollDebt - Changelog">
+    <meta property="og:description" content="Follow the evolution of ScrollDebt. Read release notes, new features, and improvements.">
+    <meta property="og:image" content="https://apkmasondev.github.io/scrolldebt-site/mockup_1.png">
+    <meta property="og:url" content="https://apkmasondev.github.io/scrolldebt-site/changelog.html">
+    <link rel="icon" type="image/png" href="apkmason_logo_premium.png">
     <title>ScrollDebt - Changelog</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -31,11 +36,11 @@
             <a href="changelog.html" class="nav-link active" data-lang="de">Änderungsprotokoll</a>
         </nav>
         <div class="lang-switcher">
-            <button onclick="setLang('en')" id="btn-en">EN</button>
-            <button onclick="setLang('pl')" id="btn-pl">PL</button>
-            <button onclick="setLang('es')" id="btn-es">ES</button>
-            <button onclick="setLang('fr')" id="btn-fr">FR</button>
-            <button onclick="setLang('de')" id="btn-de">DE</button>
+            <button id="btn-en" aria-label="Switch to English">EN</button>
+            <button id="btn-pl" aria-label="Switch to Polish">PL</button>
+            <button id="btn-es" aria-label="Switch to Spanish">ES</button>
+            <button id="btn-fr" aria-label="Switch to French">FR</button>
+            <button id="btn-de" aria-label="Switch to German">DE</button>
         </div>
     </header>
 
@@ -145,15 +150,33 @@
 
     <script>
         function setLang(lang) {
+            document.documentElement.lang = lang;
             document.body.className = 'lang-' + lang;
             document.querySelectorAll('.lang-switcher button').forEach(btn => {
                 btn.classList.toggle('active', btn.id === 'btn-' + lang);
             });
-            localStorage.setItem('scrolldebt-lang', lang);
+            try {
+                localStorage.setItem('scrolldebt-lang', lang);
+            } catch (e) {
+                console.warn('localStorage is not available');
+            }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('scrolldebt-lang');
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lang = e.target.id.replace('btn-', '');
+                    setLang(lang);
+                });
+            });
+
+            let saved = null;
+            try {
+                saved = localStorage.getItem('scrolldebt-lang');
+            } catch (e) {
+                console.warn('localStorage is not available');
+            }
+            
             const browser = navigator.language.slice(0, 2);
             const supported = ['en', 'pl', 'es', 'fr', 'de'];
             const lang = supported.includes(saved) ? saved 
