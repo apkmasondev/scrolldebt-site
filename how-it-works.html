@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollDebt - How it Works</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        .content-block {
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+        .content-block h2 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        .content-block p, .content-block li {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .content-block ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .content-block strong {
+            color: var(--text);
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .pricing-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .pricing-card.premium {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.15);
+            position: relative;
+        }
+        .pricing-card.premium::before {
+            content: "PRO";
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--accent);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .pricing-card li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--text);
+        }
+        .pricing-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        .main-nav a:hover {
+            color: var(--accent) !important;
+        }
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Scroll<span>Debt</span></a>
+        <nav class="main-nav" style="margin-left: 2rem; flex: 1;">
+            <a href="how-it-works.html" data-lang="en" style="color: var(--accent); text-decoration: none; font-weight: bold;">How it Works</a>
+            <a href="how-it-works.html" data-lang="pl" style="color: var(--accent); text-decoration: none; font-weight: bold; display: none;">Jak to Działa</a>
+            <a href="how-it-works.html" data-lang="es" style="color: var(--accent); text-decoration: none; font-weight: bold; display: none;">Cómo Funciona</a>
+            <a href="how-it-works.html" data-lang="fr" style="color: var(--accent); text-decoration: none; font-weight: bold; display: none;">Comment ça Marche</a>
+            <a href="how-it-works.html" data-lang="de" style="color: var(--accent); text-decoration: none; font-weight: bold; display: none;">Wie es Funktioniert</a>
+        </nav>
+        <div class="lang-switcher">
+            <button onclick="setLang('en')" id="btn-en">EN</button>
+            <button onclick="setLang('pl')" id="btn-pl">PL</button>
+            <button onclick="setLang('es')" id="btn-es">ES</button>
+            <button onclick="setLang('fr')" id="btn-fr">FR</button>
+            <button onclick="setLang('de')" id="btn-de">DE</button>
+        </div>
+    </header>
+
+    <main style="padding-top: 4rem;">
+        
+        <h1 data-lang="en" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">The Mechanism of Shame</h1>
+        <h1 data-lang="pl" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">Mechanizm Wstydu</h1>
+        <h1 data-lang="es" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">El Mecanismo de la Vergüenza</h1>
+        <h1 data-lang="fr" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">Le Mécanisme de la Honte</h1>
+        <h1 data-lang="de" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">Der Mechanismus der Schande</h1>
+
+        <div class="content-block">
+            <h2 data-lang="en">1. The Dashboard of Regret</h2>
+            <h2 data-lang="pl">1. Pulpit Żalu</h2>
+            <h2 data-lang="es">1. El Panel del Arrepentimiento</h2>
+            <h2 data-lang="fr">1. Le Tableau de Bord des Regrets</h2>
+            <h2 data-lang="de">1. Das Dashboard des Bedauerns</h2>
+            
+            <p data-lang="en">The main screen functions as a digital mirror. It pulls precise metrics using the Android <strong>UsageStatsManager</strong> to show your total wasted time today. You see your daily streak and a real-time list of your "Top 5 Time Thieves" — the apps draining your life force, complete with smoothly animated progress bars.</p>
+            <p data-lang="pl">Główny ekran działa jak cyfrowe lustro. Pobiera precyzyjne metryki przy użyciu systemowego <strong>UsageStatsManager</strong>, by pokazać całkowity zmarnowany dziś czas. Widzisz swoją "Dobrą Passę" oraz listę "Top 5 Złodziei Czasu" — aplikacji, które wysysają Twoje życie, wraz z animowanymi paskami postępu.</p>
+            <p data-lang="es">La pantalla principal funciona como un espejo digital. Extrae métricas precisas utilizando el <strong>UsageStatsManager</strong> de Android para mostrar el tiempo total desperdiciado hoy. Ves tu racha diaria y una lista en tiempo real de tus "Top 5 Ladrones de Tiempo".</p>
+            <p data-lang="fr">L'écran principal fonctionne comme un miroir numérique. Il extrait des métriques précises à l'aide du <strong>UsageStatsManager</strong> pour afficher votre temps total perdu aujourd'hui. Vous voyez votre séquence quotidienne et une liste de vos "Top 5 Voleurs de Temps".</p>
+            <p data-lang="de">Der Hauptbildschirm fungiert als digitaler Spiegel. Er zieht präzise Metriken mit dem <strong>UsageStatsManager</strong>, um deine insgesamt verschwendete Zeit heute anzuzeigen. Du siehst deine "Top 5 Zeitdiebe".</p>
+        </div>
+
+        <div class="content-block">
+            <h2 data-lang="en">2. The Brutal Truth Engine</h2>
+            <h2 data-lang="pl">2. Silnik Brutalnej Prawdy</h2>
+            <h2 data-lang="es">2. El Motor de la Verdad Brutal</h2>
+            <h2 data-lang="fr">2. Le Moteur de Vérité Brutale</h2>
+            <h2 data-lang="de">2. Die Brutale-Wahrheit-Maschine</h2>
+            
+            <p data-lang="en">We don't do motivational quotes. ScrollDebt utilizes a sophisticated <strong>Brutal Truth Engine</strong> containing over 200 localized, sarcastic, and painful psychological comments. The engine analyzes the structure of your time debt and delivers a tailored "roast" based on your dominant app and the length of your session. It remembers what you've seen to ensure maximum impact every time.</p>
+            <p data-lang="pl">Nie używamy motywacyjnych cytatów. ScrollDebt korzysta z zaawansowanego <strong>Silnika Brutalnej Prawdy</strong> zawierającego ponad 200 zlokalizowanych, sarkastycznych i bolesnych komentarzy. Analizuje on strukturę Twojego długu czasowego i serwuje idealnie dobrany "roast" w zależności od aplikacji i długości sesji.</p>
+            <p data-lang="es">No usamos citas motivacionales. ScrollDebt utiliza un sofisticado <strong>Motor de Verdad Brutal</strong> que contiene más de 200 comentarios psicológicos sarcásticos. Analiza la estructura de tu deuda de tiempo y ofrece un "roast" personalizado.</p>
+            <p data-lang="fr">Nous ne faisons pas de citations de motivation. ScrollDebt utilise un <strong>Moteur de Vérité Brutale</strong> sophistiqué contenant plus de 200 commentaires sarcastiques. Le moteur analyse la structure de votre dette de temps.</p>
+            <p data-lang="de">Wir machen keine Motivationszitate. ScrollDebt nutzt eine ausgeklügelte <strong>Brutale-Wahrheit-Maschine</strong> mit über 200 sarkastischen Kommentaren. Sie analysiert die Struktur deiner Zeitschuld.</p>
+        </div>
+
+        <div class="content-block">
+            <h2 data-lang="en">3. Life Lost Translations</h2>
+            <h2 data-lang="pl">3. Przelicznik Straconego Życia</h2>
+            <h2 data-lang="es">3. Traducciones de Vida Perdida</h2>
+            <h2 data-lang="fr">3. Traductions de Vies Perdues</h2>
+            <h2 data-lang="de">3. Verlorenes Leben Übersetzungen</h2>
+            
+            <p data-lang="en">Abstract hours mean nothing. The "Life Lost" screen converts your cumulative database history into tangible human experiences you missed out on. We translate your screen time into:</p>
+            <p data-lang="pl">Abstrakcyjne godziny nic nie znaczą. Ekran "Stracone" przelicza Twoją skumulowaną historię na namacalne, życiowe doświadczenia, które przegapiłeś. Przeliczamy Twój czas przed ekranem na:</p>
+            <p data-lang="es">Las horas abstractas no significan nada. La pantalla "Vida Perdida" convierte tu historial acumulado en experiencias tangibles que te perdiste.</p>
+            <p data-lang="fr">Les heures abstraites ne signifient rien. L'écran "Vie Perdue" convertit votre historique cumulatif en expériences tangibles que vous avez manquées.</p>
+            <p data-lang="de">Abstrakte Stunden bedeuten nichts. Der Bildschirm "Verlorenes Leben" wandelt deine kumulative Geschichte in greifbare Erfahrungen um.</p>
+            
+            <ul>
+                <li data-lang="en"><strong>Sleep Cycles:</strong> 90-minute restorative sleep sessions lost.</li>
+                <li data-lang="pl"><strong>Cykle Snu:</strong> Stracone 90-minutowe sesje głębokiego snu.</li>
+                <li data-lang="es"><strong>Ciclos de Sueño:</strong> Sesiones de sueño de 90 minutos perdidas.</li>
+                <li data-lang="fr"><strong>Cycles de Sommeil:</strong> Sessions de sommeil de 90 minutes perdues.</li>
+                <li data-lang="de"><strong>Schlafzyklen:</strong> Verlorene 90-minütige Schlafsitzungen.</li>
+                
+                <li data-lang="en"><strong>Missed Workouts:</strong> 1.5-hour gym sessions you skipped.</li>
+                <li data-lang="pl"><strong>Opuszczone Treningi:</strong> 1.5-godzinne sesje na siłowni, których nie zrobiłeś.</li>
+                <li data-lang="es"><strong>Entrenamientos:</strong> Sesiones de gimnasio de 1.5 horas que te saltaste.</li>
+                <li data-lang="fr"><strong>Entraînements:</strong> Séances de gym de 1.5 heures que vous avez ignorées.</li>
+                <li data-lang="de"><strong>Verpasste Workouts:</strong> 1.5-stündige Gym-Sessions, die du übersprungen hast.</li>
+                
+                <li data-lang="en"><strong>Books Read:</strong> Average 250-page books you could have finished.</li>
+                <li data-lang="pl"><strong>Przeczytane Książki:</strong> Średnie 250-stronicowe książki, które mogłeś przeczytać.</li>
+                <li data-lang="es"><strong>Libros:</strong> Libros promedio de 250 páginas que podrías haber terminado.</li>
+                <li data-lang="fr"><strong>Livres:</strong> Livres de 250 pages en moyenne que vous auriez pu terminer.</li>
+                <li data-lang="de"><strong>Bücher:</strong> Durchschnittlich 250-seitige Bücher, die du hättest beenden können.</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h2 data-lang="en">Freemium vs. Premium</h2>
+            <h2 data-lang="pl">Freemium vs. Premium</h2>
+            <h2 data-lang="es">Freemium vs. Premium</h2>
+            <h2 data-lang="fr">Freemium vs. Premium</h2>
+            <h2 data-lang="de">Freemium vs. Premium</h2>
+            
+            <p data-lang="en">ScrollDebt offers a generous free tier to start confronting your habits. For those who want absolute precision and zero excuses, there is a one-time lifetime Premium upgrade.</p>
+            <p data-lang="pl">ScrollDebt oferuje hojny darmowy plan, aby zacząć walkę z nawykami. Dla tych, którzy pragną absolutnej precyzji i zero wymówek, dostępna jest jednorazowa licencja Premium (Lifetime).</p>
+            <p data-lang="es">ScrollDebt ofrece un plan gratuito generoso. Para aquellos que desean precisión absoluta, hay una actualización Premium de por vida.</p>
+            <p data-lang="fr">ScrollDebt propose un niveau gratuit généreux. Pour ceux qui veulent une précision absolue, il y a une mise à niveau Premium à vie.</p>
+            <p data-lang="de">ScrollDebt bietet eine großzügige kostenlose Stufe. Für diejenigen, die absolute Präzision wollen, gibt es ein lebenslanges Premium-Upgrade.</p>
+
+            <div class="pricing-grid">
+                <!-- Freemium -->
+                <div class="pricing-card">
+                    <h3 data-lang="en">Freemium</h3>
+                    <h3 data-lang="pl">Freemium</h3>
+                    <h3 data-lang="es">Gratis</h3>
+                    <h3 data-lang="fr">Gratuit</h3>
+                    <h3 data-lang="de">Kostenlos</h3>
+                    <div class="pricing-price">$0</div>
+                    <ul>
+                        <li data-lang="en">Track up to 3 major doomscrolling apps</li>
+                        <li data-lang="pl">Śledź do 3 głównych aplikacji (Top Thieves)</li>
+                        <li data-lang="es">Rastrea hasta 3 aplicaciones</li>
+                        <li data-lang="fr">Suivez jusqu'à 3 applications</li>
+                        <li data-lang="de">Verfolge bis zu 3 Apps</li>
+
+                        <li data-lang="en">Battery Saver Tracking Mode</li>
+                        <li data-lang="pl">Tryb Śledzenia "Oszczędzanie Baterii"</li>
+                        <li data-lang="es">Modo de Ahorro de Batería</li>
+                        <li data-lang="fr">Mode d'Économie de Batterie</li>
+                        <li data-lang="de">Batteriesparmodus</li>
+
+                        <li data-lang="en">Daily "Life Lost" Translations</li>
+                        <li data-lang="pl">Dzienne statystyki "Straconego Życia"</li>
+                        <li data-lang="es">Traducciones Diarias de "Vida Perdida"</li>
+                        <li data-lang="fr">Traductions Quotidiennes de "Vie Perdue"</li>
+                        <li data-lang="de">Tägliche "Verlorenes Leben" Übersetzungen</li>
+
+                        <li data-lang="en">100% Local Privacy Architecture</li>
+                        <li data-lang="pl">100% Prywatności Offline (Brak Chmury)</li>
+                        <li data-lang="es">100% Privacidad Local</li>
+                        <li data-lang="fr">100% Confidentialité Locale</li>
+                        <li data-lang="de">100% Lokale Privatsphäre</li>
+                    </ul>
+                </div>
+                
+                <!-- Premium -->
+                <div class="pricing-card premium">
+                    <h3 data-lang="en">PRO Lifetime</h3>
+                    <h3 data-lang="pl">PRO Dożywotnio</h3>
+                    <h3 data-lang="es">PRO de por vida</h3>
+                    <h3 data-lang="fr">PRO à vie</h3>
+                    <h3 data-lang="de">PRO Lebenslang</h3>
+                    <div class="pricing-price" data-lang="en">One-time</div>
+                    <div class="pricing-price" data-lang="pl">Jednorazowo</div>
+                    <div class="pricing-price" data-lang="es">Pago único</div>
+                    <div class="pricing-price" data-lang="fr">Paiement unique</div>
+                    <div class="pricing-price" data-lang="de">Einmalzahlung</div>
+                    <ul>
+                        <li data-lang="en"><strong>Unlimited App Tracking</strong></li>
+                        <li data-lang="pl"><strong>Śledź Nielimitowaną Liczbę Aplikacji</strong></li>
+                        <li data-lang="es"><strong>Rastreo de Aplicaciones Ilimitado</strong></li>
+                        <li data-lang="fr"><strong>Suivi d'Applications Illimité</strong></li>
+                        <li data-lang="de"><strong>Unbegrenztes App-Tracking</strong></li>
+
+                        <li data-lang="en"><strong>Sniper Mode Tracking:</strong> Relentless, precision foreground tracking that never misses a second.</li>
+                        <li data-lang="pl"><strong>Tryb Snajperski:</strong> Bezwzględne śledzenie w tle (Foreground), które wyłapie każdą sekundę doomscrollingu.</li>
+                        <li data-lang="es"><strong>Modo Francotirador:</strong> Rastreo implacable en primer plano.</li>
+                        <li data-lang="fr"><strong>Mode Sniper:</strong> Suivi implacable en premier plan.</li>
+                        <li data-lang="de"><strong>Sniper-Modus:</strong> Unerbittliches Tracking im Vordergrund.</li>
+
+                        <li data-lang="en">Support Indie Development</li>
+                        <li data-lang="pl">Wsparcie Niezależnego Twórcy</li>
+                        <li data-lang="es">Apoya el Desarrollo Indie</li>
+                        <li data-lang="fr">Soutenez le Développement Indépendant</li>
+                        <li data-lang="de">Unterstütze Indie-Entwicklung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <img src="apkmason_logo_premium.png" alt="ApkMason.dev Logo" class="footer-logo">
+            <span class="footer-brand">ApkMason.dev</span>
+        </div>
+        <div class="footer-links">
+            <a href="privacy.html" data-lang="en">Privacy Policy</a>
+            <a href="privacy.html" data-lang="pl">Polityka Prywatności</a>
+            <a href="privacy.html" data-lang="es">Política de Privacidad</a>
+            <a href="privacy.html" data-lang="fr">Politique de Confidentialité</a>
+            <a href="privacy.html" data-lang="de">Datenschutzerklärung</a>
+            
+            <a href="changelog.html" data-lang="en">Changelog</a>
+            <a href="changelog.html" data-lang="pl">Historia Wersji</a>
+            <a href="changelog.html" data-lang="es">Registro de Cambios</a>
+            <a href="changelog.html" data-lang="fr">Journal des Modifications</a>
+            <a href="changelog.html" data-lang="de">Änderungsprotokoll</a>
+        </div>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+            });
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.toggle('active', btn.id === 'btn-' + lang);
+            });
+            localStorage.setItem('scrolldebt-lang', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('scrolldebt-lang');
+            const browser = navigator.language.slice(0, 2);
+            const supported = ['en', 'pl', 'es', 'fr', 'de'];
+            const lang = supported.includes(saved) ? saved 
+                       : supported.includes(browser) ? browser 
+                       : 'en';
+            setLang(lang);
+            
+            document.querySelectorAll('span[data-lang], a[data-lang], h1[data-lang], h2[data-lang], h3[data-lang], p[data-lang], li[data-lang], div[data-lang]').forEach(el => {
+                if (el.dataset.lang === lang) {
+                    if(el.tagName === 'A' || el.tagName === 'SPAN' || el.tagName === 'STRONG') {
+                        el.style.display = 'inline-block';
+                    } else if (el.tagName === 'LI') {
+                        el.style.display = 'list-item';
+                    } else {
+                        el.style.display = 'block';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
