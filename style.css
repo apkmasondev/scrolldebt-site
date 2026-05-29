@@ -1,0 +1,170 @@
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --accent: #ff3333;
+  --text: #f0f0f0;
+  --muted: #666666;
+  --border: #222222;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Space Mono', 'JetBrains Mono', monospace;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-switcher button {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.lang-switcher button:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.lang-switcher button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+h1, h2, h3 {
+  color: var(--text);
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feature-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+footer a:hover {
+  color: var(--text);
+}
+
+[data-lang] {
+  display: none;
+}
+
+/* Privacy & Changelog specific */
+.content-section {
+  background-color: var(--surface);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.content-section p, .content-section li {
+  color: var(--muted);
+}
+
+.content-section h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
