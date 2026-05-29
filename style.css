@@ -324,7 +324,7 @@ main {
   position: relative;
   display: flex;
   align-items: center;
-  max-width: 100%;
+  margin: 0 -5%;
 }
 
 .gallery-btn {
@@ -370,6 +370,7 @@ main {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   flex: 1;
+  min-width: 0;
   scroll-behavior: smooth;
 }
 
