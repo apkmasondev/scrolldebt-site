@@ -10,6 +10,25 @@
 <body>
     <header>
         <a href="index.html" class="logo">Scroll<span>Debt</span></a>
+        <nav class="main-nav">
+            <a href="how-it-works.html" class="nav-link" data-lang="en">How it Works</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="pl">Jak to Działa</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="es">Cómo Funciona</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="fr">Comment ça Marche</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="de">Wie es Funktioniert</a>
+
+            <a href="privacy.html" class="nav-link active" data-lang="en">Privacy Policy</a>
+            <a href="privacy.html" class="nav-link active" data-lang="pl">Polityka Prywatności</a>
+            <a href="privacy.html" class="nav-link active" data-lang="es">Política de Privacidad</a>
+            <a href="privacy.html" class="nav-link active" data-lang="fr">Politique de Confidentialité</a>
+            <a href="privacy.html" class="nav-link active" data-lang="de">Datenschutzerklärung</a>
+
+            <a href="changelog.html" class="nav-link" data-lang="en">Changelog</a>
+            <a href="changelog.html" class="nav-link" data-lang="pl">Historia Wersji</a>
+            <a href="changelog.html" class="nav-link" data-lang="es">Registro de Cambios</a>
+            <a href="changelog.html" class="nav-link" data-lang="fr">Journal des Modifications</a>
+            <a href="changelog.html" class="nav-link" data-lang="de">Änderungsprotokoll</a>
+        </nav>
         <div class="lang-switcher">
             <button onclick="setLang('en')" id="btn-en">EN</button>
             <button onclick="setLang('pl')" id="btn-pl">PL</button>
@@ -147,9 +166,7 @@
 
     <script>
         function setLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-            });
+            document.body.className = 'lang-' + lang;
             document.querySelectorAll('.lang-switcher button').forEach(btn => {
                 btn.classList.toggle('active', btn.id === 'btn-' + lang);
             });
@@ -164,12 +181,6 @@
                        : supported.includes(browser) ? browser 
                        : 'en';
             setLang(lang);
-            
-            document.querySelectorAll('a[data-lang], span[data-lang]').forEach(el => {
-                if (el.dataset.lang === lang) {
-                    el.style.display = 'inline-block';
-                }
-            });
         });
     </script>
 </body>

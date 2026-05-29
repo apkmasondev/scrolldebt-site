@@ -10,12 +10,24 @@
 <body>
     <header>
         <a href="index.html" class="logo">Scroll<span>Debt</span></a>
-        <nav class="main-nav" style="margin-left: 2rem; flex: 1;">
-            <a href="how-it-works.html" data-lang="en" style="color: var(--muted); text-decoration: none; font-weight: bold; transition: color 0.3s;">How it Works</a>
-            <a href="how-it-works.html" data-lang="pl" style="color: var(--muted); text-decoration: none; font-weight: bold; transition: color 0.3s; display: none;">Jak to Działa</a>
-            <a href="how-it-works.html" data-lang="es" style="color: var(--muted); text-decoration: none; font-weight: bold; transition: color 0.3s; display: none;">Cómo Funciona</a>
-            <a href="how-it-works.html" data-lang="fr" style="color: var(--muted); text-decoration: none; font-weight: bold; transition: color 0.3s; display: none;">Comment ça Marche</a>
-            <a href="how-it-works.html" data-lang="de" style="color: var(--muted); text-decoration: none; font-weight: bold; transition: color 0.3s; display: none;">Wie es Funktioniert</a>
+        <nav class="main-nav">
+            <a href="how-it-works.html" class="nav-link" data-lang="en">How it Works</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="pl">Jak to Działa</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="es">Cómo Funciona</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="fr">Comment ça Marche</a>
+            <a href="how-it-works.html" class="nav-link" data-lang="de">Wie es Funktioniert</a>
+
+            <a href="privacy.html" class="nav-link" data-lang="en">Privacy Policy</a>
+            <a href="privacy.html" class="nav-link" data-lang="pl">Polityka Prywatności</a>
+            <a href="privacy.html" class="nav-link" data-lang="es">Política de Privacidad</a>
+            <a href="privacy.html" class="nav-link" data-lang="fr">Politique de Confidentialité</a>
+            <a href="privacy.html" class="nav-link" data-lang="de">Datenschutzerklärung</a>
+
+            <a href="changelog.html" class="nav-link" data-lang="en">Changelog</a>
+            <a href="changelog.html" class="nav-link" data-lang="pl">Historia Wersji</a>
+            <a href="changelog.html" class="nav-link" data-lang="es">Registro de Cambios</a>
+            <a href="changelog.html" class="nav-link" data-lang="fr">Journal des Modifications</a>
+            <a href="changelog.html" class="nav-link" data-lang="de">Änderungsprotokoll</a>
         </nav>
         <div class="lang-switcher">
             <button onclick="setLang('en')" id="btn-en">EN</button>
@@ -122,7 +134,7 @@
 
     <footer>
         <div class="footer-top">
-            <img src="apkmason_logo_final.png" alt="ApkMason.dev Logo" class="footer-logo">
+            <img src="apkmason_logo_premium.png" alt="ApkMason.dev Logo" class="footer-logo">
             <span class="footer-brand">ApkMason.dev</span>
         </div>
         <div class="footer-links">
@@ -142,9 +154,7 @@
 
     <script>
         function setLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-            });
+            document.body.className = 'lang-' + lang;
             document.querySelectorAll('.lang-switcher button').forEach(btn => {
                 btn.classList.toggle('active', btn.id === 'btn-' + lang);
             });
@@ -159,17 +169,6 @@
                        : supported.includes(browser) ? browser 
                        : 'en';
             setLang(lang);
-            
-            // Set some elements to display:inline or inline-block based on tag
-            document.querySelectorAll('span[data-lang], a[data-lang], h1[data-lang], h2[data-lang], h3[data-lang]').forEach(el => {
-                if (el.dataset.lang === lang) {
-                    if(el.tagName === 'A' || el.tagName === 'SPAN') {
-                        el.style.display = 'inline-block';
-                    } else {
-                        el.style.display = 'block';
-                    }
-                }
-            });
         });
     </script>
 </body>

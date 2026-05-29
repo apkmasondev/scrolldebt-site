@@ -60,6 +60,44 @@ header {
   color: var(--accent);
 }
 
+/* Navigation styles */
+.main-nav {
+  margin-left: 3rem;
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
 .lang-switcher button {
   background: transparent;
   color: var(--muted);
@@ -77,6 +115,45 @@ header {
   color: var(--text);
   border-color: var(--border);
   background: var(--surface);
+}
+
+/* Language Switching System */
+[data-lang] {
+  display: none !important;
+}
+
+body.lang-en [data-lang="en"],
+body.lang-pl [data-lang="pl"],
+body.lang-es [data-lang="es"],
+body.lang-fr [data-lang="fr"],
+body.lang-de [data-lang="de"] {
+  display: block !important;
+}
+
+body.lang-en a[data-lang="en"],
+body.lang-pl a[data-lang="pl"],
+body.lang-es a[data-lang="es"],
+body.lang-fr a[data-lang="fr"],
+body.lang-de a[data-lang="de"],
+body.lang-en span[data-lang="en"],
+body.lang-pl span[data-lang="pl"],
+body.lang-es span[data-lang="es"],
+body.lang-fr span[data-lang="fr"],
+body.lang-de span[data-lang="de"],
+body.lang-en strong[data-lang="en"],
+body.lang-pl strong[data-lang="pl"],
+body.lang-es strong[data-lang="es"],
+body.lang-fr strong[data-lang="fr"],
+body.lang-de strong[data-lang="de"] {
+  display: inline-block !important;
+}
+
+body.lang-en li[data-lang="en"],
+body.lang-pl li[data-lang="pl"],
+body.lang-es li[data-lang="es"],
+body.lang-fr li[data-lang="fr"],
+body.lang-de li[data-lang="de"] {
+  display: list-item !important;
 }
 
 main {
@@ -319,6 +396,18 @@ footer {
 
 /* Responsive */
 @media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 5%;
+  }
+  .main-nav {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
   .hero {
     flex-direction: column;
     text-align: center;
