@@ -3,104 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how ScrollDebt tracks your doomscrolling, delivers brutal truth notifications, and converts wasted screen time into lost life experiences. Freemium vs PRO comparison.">
     <title>ScrollDebt - How it Works</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        .content-block {
-            background: var(--surface);
-            backdrop-filter: blur(10px);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            margin-bottom: 3rem;
-        }
-        .content-block h2 {
-            color: var(--accent);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-        .content-block p, .content-block li {
-            color: var(--muted);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-        .content-block ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .content-block strong {
-            color: var(--text);
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .pricing-card {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.5rem;
-            text-align: center;
-        }
-        .pricing-card.premium {
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.15);
-            position: relative;
-        }
-        .pricing-card.premium::before {
-            content: "PRO";
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--accent);
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-        .pricing-price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--text);
-            margin-bottom: 2rem;
-        }
-        .pricing-card ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        .pricing-card li {
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--text);
-        }
-        .pricing-card li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-        .main-nav a:hover {
-            color: var(--accent) !important;
-        }
-        @media (max-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -135,11 +41,11 @@
 
     <main style="padding-top: 4rem;">
         
-        <h1 data-lang="en" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">The Mechanism of Shame</h1>
-        <h1 data-lang="pl" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">Mechanizm Wstydu</h1>
-        <h1 data-lang="es" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">El Mecanismo de la Vergüenza</h1>
-        <h1 data-lang="fr" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">Le Mécanisme de la Honte</h1>
-        <h1 data-lang="de" style="font-size: 3.5rem; margin-bottom: 3rem; text-align: center; letter-spacing: -1.5px;">Der Mechanismus der Schande</h1>
+        <h1 class="page-title" data-lang="en">The Mechanism of Shame</h1>
+        <h1 class="page-title" data-lang="pl">Mechanizm Wstydu</h1>
+        <h1 class="page-title" data-lang="es">El Mecanismo de la Vergüenza</h1>
+        <h1 class="page-title" data-lang="fr">Le Mécanisme de la Honte</h1>
+        <h1 class="page-title" data-lang="de">Der Mechanismus der Schande</h1>
 
         <div class="content-block">
             <h2 data-lang="en">1. The Dashboard of Regret</h2>
@@ -306,6 +212,7 @@
             <a href="changelog.html" data-lang="fr">Journal des Modifications</a>
             <a href="changelog.html" data-lang="de">Änderungsprotokoll</a>
         </div>
+        <p class="footer-copy">&copy; 2026 ApkMason.dev — All rights reserved.</p>
     </footer>
 
     <script>
