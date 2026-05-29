@@ -205,3 +205,73 @@ footer a:hover {
   padding-bottom: 0.5rem;
   margin-top: 2rem;
 }
+
+/* Gallery Styles */
+.gallery {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0 2rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 4px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 250px;
+  scroll-snap-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: translateY(-5px);
+  border-color: var(--muted);
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin: 1rem auto 2rem auto;
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  border-radius: 12px;
+}
+.footer-logo:hover {
+  opacity: 1;
+}
