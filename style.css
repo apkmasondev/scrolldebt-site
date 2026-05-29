@@ -192,6 +192,8 @@ main {
   margin: 0 auto;
   padding: 0 5%;
   flex: 1;
+  min-width: 0;
+  width: 100%;
 }
 
 /* ===== HERO SECTION ===== */
@@ -207,6 +209,7 @@ main {
   flex: 1;
   padding-right: 4rem;
   width: 100%;
+  min-width: 0;
 }
 
 .hero h1 {
@@ -284,6 +287,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  min-width: 0;
 }
 
 .feature-card {
@@ -333,6 +337,7 @@ main {
   margin: 0 auto;
   padding: 0 60px;
   width: 100%;
+  min-width: 0;
 }
 
 .gallery-btn {
@@ -743,6 +748,7 @@ footer {
     padding: 0;
     max-width: 100%;
     width: 100%;
+    min-width: 0;
   }
   .gallery-scroll {
     padding: 1rem 5% 3rem 5%;
