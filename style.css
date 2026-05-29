@@ -308,8 +308,57 @@ main {
 
 .gallery h2 {
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.5px;
+}
+
+.swipe-hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.gallery-btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(5px);
+}
+
+.gallery-btn.prev {
+  left: 2%;
+}
+
+.gallery-btn.next {
+  right: 2%;
+}
+
+.gallery-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
 }
 
 .gallery-scroll {
@@ -317,9 +366,11 @@ main {
   overflow-x: auto;
   gap: 1.5rem;
   padding: 1rem 5% 3rem 5%;
-  margin: 0 -5%;
+  margin: 0;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  flex: 1;
+  scroll-behavior: smooth;
 }
 
 .gallery-scroll::-webkit-scrollbar {
@@ -348,6 +399,9 @@ main {
 
 .gallery-item img {
   width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: top center;
   border-radius: 20px;
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -676,6 +730,12 @@ footer {
   }
   .gallery-item {
     width: 240px;
+  }
+  .gallery-item img {
+    height: 480px;
+  }
+  .gallery-btn {
+    display: none; /* Hide buttons on mobile, swipe is natural */
   }
   .footer-links {
     flex-direction: column;

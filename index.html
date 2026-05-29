@@ -122,18 +122,35 @@
             <h2 data-lang="es">Dentro de la Experiencia</h2>
             <h2 data-lang="fr">À l'intérieur de l'Expérience</h2>
             <h2 data-lang="de">In der Erfahrung</h2>
+            <div class="swipe-hint">
+                <span data-lang="en">← Swipe to explore →</span>
+                <span data-lang="pl">← Przesuń, aby zobaczyć więcej →</span>
+                <span data-lang="es">← Desliza para explorar →</span>
+                <span data-lang="fr">← Glissez pour explorer →</span>
+                <span data-lang="de">← Wischen, um zu erkunden →</span>
+            </div>
             
-            <div class="gallery-scroll">
-                <!-- Dark Mode -->
-                <div class="gallery-item"><img src="screen_1.png" alt="ScrollDebt Dashboard"></div>
-                <div class="gallery-item"><img src="screen_2.png" alt="ScrollDebt Statistics"></div>
-                <div class="gallery-item"><img src="screen_3.png" alt="Wasted Potential"></div>
-                <div class="gallery-item"><img src="screen_4.png" alt="Tracking Setup"></div>
-                <div class="gallery-item"><img src="screen_5.png" alt="Mode Configuration"></div>
-                <!-- Light Mode -->
-                <div class="gallery-item"><img src="screen_light_1.png" alt="Light Mode Dashboard"></div>
-                <div class="gallery-item"><img src="screen_light_2.png" alt="Light Mode App Select"></div>
-                <div class="gallery-item"><img src="screen_light_3.png" alt="Light Mode Brutal Truth"></div>
+            <div class="gallery-wrapper">
+                <button class="gallery-btn prev" aria-label="Previous image">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                
+                <div class="gallery-scroll" id="galleryScroll">
+                    <!-- Dark Mode -->
+                    <div class="gallery-item"><img src="screen_1.png" alt="ScrollDebt Dashboard"></div>
+                    <div class="gallery-item"><img src="screen_2.png" alt="ScrollDebt Statistics"></div>
+                    <div class="gallery-item"><img src="screen_3.png" alt="Wasted Potential"></div>
+                    <div class="gallery-item"><img src="screen_4.png" alt="Tracking Setup"></div>
+                    <div class="gallery-item"><img src="screen_5.png" alt="Mode Configuration"></div>
+                    <!-- Light Mode -->
+                    <div class="gallery-item"><img src="screen_light_1.png" alt="Light Mode Dashboard"></div>
+                    <div class="gallery-item"><img src="screen_light_2.png" alt="Light Mode App Select"></div>
+                    <div class="gallery-item"><img src="screen_light_3.png" alt="Light Mode Brutal Truth"></div>
+                </div>
+
+                <button class="gallery-btn next" aria-label="Next image">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
             </div>
         </section>
     </main>
@@ -194,6 +211,20 @@
                        : supported.includes(browser) ? browser 
                        : 'en';
             setLang(lang);
+
+            // Gallery Scroll Buttons
+            const scroll = document.getElementById('galleryScroll');
+            const btnPrev = document.querySelector('.gallery-btn.prev');
+            const btnNext = document.querySelector('.gallery-btn.next');
+            
+            if (scroll && btnPrev && btnNext) {
+                btnPrev.addEventListener('click', () => {
+                    scroll.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+                btnNext.addEventListener('click', () => {
+                    scroll.scrollBy({ left: 300, behavior: 'smooth' });
+                });
+            }
         });
     </script>
 </body>
