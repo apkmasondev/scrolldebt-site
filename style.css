@@ -834,6 +834,7 @@ footer {
     transform: scale(1.02);
   }
   .features-container {
+    display: flex;
     flex-direction: column;
     width: 100%;
   }
