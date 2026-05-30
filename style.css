@@ -587,6 +587,25 @@ main {
 }
 
 /* ===== PRICING GRID (How-it-Works) ===== */
+.features-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .features-container.reversed .hero-image {
+    order: 2;
+  }
+  .features-container.reversed .features-grid {
+    order: 1;
+  }
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
