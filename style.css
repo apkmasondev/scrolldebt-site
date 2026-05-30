@@ -418,6 +418,13 @@ main {
   scrollbar-width: none;
 }
 
+@media (min-width: 993px) {
+  .gallery-scroll {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent);
+    mask-image: linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent);
+  }
+}
+
 .gallery-scroll::-webkit-scrollbar {
   display: none;
 }
