@@ -37,25 +37,25 @@ const metaTranslations = {
         }
     },
     'how-it-works.html': {
-        'en': { title: 'How It Works - ScrollDebt' },
-        'pl': { title: 'Jak to Działa - ScrollDebt' },
-        'es': { title: 'Cómo Funciona - ScrollDebt' },
-        'fr': { title: 'Comment ça Marche - ScrollDebt' },
-        'de': { title: 'Wie es Funktioniert - ScrollDebt' }
+        'en': { title: 'How It Works - ScrollDebt', desc: 'Discover how ScrollDebt tracks your screen time, roasts you with sarcastic notifications, and shows what you truly lost. The Mechanism of Shame in detail.', ogDesc: 'Discover how ScrollDebt tracks your screen time, roasts you with sarcastic notifications, and shows what you truly lost.' },
+        'pl': { title: 'Jak to Działa - ScrollDebt', desc: 'Odkryj, jak ScrollDebt śledzi Twój czas przed ekranem, roastuje Cię sarkastycznymi powiadomieniami i pokazuje, co naprawdę straciłeś. Mechanizm Wstydu w szczegółach.', ogDesc: 'Odkryj, jak ScrollDebt śledzi Twój czas przed ekranem, roastuje Cię sarkastycznymi powiadomieniami i pokazuje, co naprawdę straciłeś.' },
+        'es': { title: 'Cómo Funciona - ScrollDebt', desc: 'Descubre cómo ScrollDebt rastrea tu tiempo de pantalla, te critica con notificaciones sarcásticas y te muestra lo que realmente perdiste.', ogDesc: 'Descubre cómo ScrollDebt rastrea tu tiempo de pantalla, te critica con notificaciones sarcásticas y te muestra lo que realmente perdiste.' },
+        'fr': { title: 'Comment ça Marche - ScrollDebt', desc: 'Découvrez comment ScrollDebt suit votre temps d\'écran, vous critique avec des notifications sarcastiques et montre ce que vous avez vraiment perdu.', ogDesc: 'Découvrez comment ScrollDebt suit votre temps d\'écran, vous critique avec des notifications sarcastiques et montre ce que vous avez vraiment perdu.' },
+        'de': { title: 'Wie es Funktioniert - ScrollDebt', desc: 'Entdecke, wie ScrollDebt deine Bildschirmzeit verfolgt, dich mit sarkastischen Benachrichtigungen röstet und dir zeigt, was du wirklich verloren hast.', ogDesc: 'Entdecke, wie ScrollDebt deine Bildschirmzeit verfolgt, dich mit sarkastischen Benachrichtigungen röstet und dir zeigt, was du wirklich verloren hast.' }
     },
     'privacy.html': {
-        'en': { title: 'Privacy Policy - ScrollDebt' },
-        'pl': { title: 'Polityka Prywatności - ScrollDebt' },
-        'es': { title: 'Política de Privacidad - ScrollDebt' },
-        'fr': { title: 'Politique de Confidentialité - ScrollDebt' },
-        'de': { title: 'Datenschutzerklärung - ScrollDebt' }
+        'en': { title: 'Privacy Policy - ScrollDebt', desc: 'ScrollDebt is 100% offline. Your data never leaves your device. Check our privacy policy — no analytics, no cloud.', ogDesc: 'ScrollDebt is 100% offline. Your data never leaves your device. Check our privacy policy — no analytics, no cloud.' },
+        'pl': { title: 'Polityka Prywatności - ScrollDebt', desc: 'ScrollDebt działa w 100% offline. Twoje dane nigdy nie opuszczają urządzenia. Sprawdź naszą politykę prywatności — żadnej analityki, żadnej chmury.', ogDesc: 'ScrollDebt działa w 100% offline. Twoje dane nigdy nie opuszczają urządzenia. Sprawdź naszą politykę prywatności — żadnej analityki, żadnej chmury.' },
+        'es': { title: 'Política de Privacidad - ScrollDebt', desc: 'ScrollDebt es 100% offline. Tus datos nunca salen de tu dispositivo. Revisa nuestra política de privacidad — sin analíticas, sin nube.', ogDesc: 'ScrollDebt es 100% offline. Tus datos nunca salen de tu dispositivo.' },
+        'fr': { title: 'Politique de Confidentialité - ScrollDebt', desc: 'ScrollDebt est 100% hors ligne. Vos données ne quittent jamais votre appareil. Consultez notre politique de confidentialité — pas d\'analyse, pas de cloud.', ogDesc: 'ScrollDebt est 100% hors ligne. Vos données ne quittent jamais votre appareil.' },
+        'de': { title: 'Datenschutzerklärung - ScrollDebt', desc: 'ScrollDebt ist zu 100% offline. Deine Daten verlassen niemals dein Gerät. Lies unsere Datenschutzerklärung — keine Analysen, keine Cloud.', ogDesc: 'ScrollDebt ist zu 100% offline. Deine Daten verlassen niemals dein Gerät.' }
     },
     'changelog.html': {
-        'en': { title: 'Changelog - ScrollDebt' },
-        'pl': { title: 'Historia Wersji - ScrollDebt' },
-        'es': { title: 'Registro de Cambios - ScrollDebt' },
-        'fr': { title: 'Journal des Modifications - ScrollDebt' },
-        'de': { title: 'Änderungsprotokoll - ScrollDebt' }
+        'en': { title: 'Changelog - ScrollDebt', desc: 'ScrollDebt version history — track what\'s new in the app built to fight doomscrolling.', ogDesc: 'ScrollDebt version history — track what\'s new in the app built to fight doomscrolling.' },
+        'pl': { title: 'Historia Wersji - ScrollDebt', desc: 'Historia wersji ScrollDebt — śledź, co nowego pojawiło się w aplikacji do walki z doomscrollingiem.', ogDesc: 'Historia wersji ScrollDebt — śledź, co nowego pojawiło się w aplikacji do walki z doomscrollingiem.' },
+        'es': { title: 'Registro de Cambios - ScrollDebt', desc: 'Historial de versiones de ScrollDebt — sigue las novedades en la aplicación creada para combatir el doomscrolling.', ogDesc: 'Historial de versiones de ScrollDebt — sigue las novedades en la aplicación creada para combatir el doomscrolling.' },
+        'fr': { title: 'Journal des Modifications - ScrollDebt', desc: 'Historique des versions de ScrollDebt — suivez les nouveautés de l\'application conçue pour lutter contre le doomscrolling.', ogDesc: 'Historique des versions de ScrollDebt — suivez les nouveautés de l\'application conçue pour lutter contre le doomscrolling.' },
+        'de': { title: 'Änderungsprotokoll - ScrollDebt', desc: 'ScrollDebt Versionsverlauf — verfolge die Neuerungen in der App zur Bekämpfung von Doomscrolling.', ogDesc: 'ScrollDebt Versionsverlauf — verfolge die Neuerungen in der App zur Bekämpfung von Doomscrolling.' }
     }
 };
 
