@@ -8,6 +8,34 @@ const languages = ['en', 'es', 'fr', 'de', 'pl'];
 const defaultLang = 'en';
 const baseUrl = 'https://apkmasondev.github.io/scrolldebt-site/';
 
+const metaTranslations = {
+    'en': {
+        title: 'ScrollDebt - Reclaim Your Time',
+        desc: 'ScrollDebt converts your mindless doomscrolling into brutal reality checks. Track wasted time, face sarcastic roasts, and reclaim your life. 100% offline, zero data collection.',
+        ogDesc: 'ScrollDebt converts your mindless doomscrolling into brutal reality checks.'
+    },
+    'pl': {
+        title: 'ScrollDebt - Odzyskaj Swój Czas',
+        desc: 'ScrollDebt zamienia bezmyślne scrollowanie w brutalne zderzenie z rzeczywistością. Śledź zmarnowany czas, czytaj sarkastyczne komentarze i odzyskaj kontrolę nad życiem. W 100% offline, zero gromadzenia danych.',
+        ogDesc: 'ScrollDebt zamienia bezmyślne scrollowanie w brutalne zderzenie z rzeczywistością.'
+    },
+    'es': {
+        title: 'ScrollDebt - Recupera Tu Tiempo',
+        desc: 'ScrollDebt convierte tu adicción a la pantalla en duros golpes de realidad. Registra el tiempo perdido, enfrenta comentarios sarcásticos y recupera tu vida. 100% offline, sin recopilar datos.',
+        ogDesc: 'ScrollDebt convierte tu adicción a la pantalla en duros golpes de realidad.'
+    },
+    'fr': {
+        title: 'ScrollDebt - Reprenez Votre Temps',
+        desc: 'ScrollDebt transforme votre défilement compulsif en un rappel brutal à la réalité. Suivez le temps perdu, affrontez des remarques sarcastiques et reprenez votre vie en main. 100% hors ligne, aucune collecte de données.',
+        ogDesc: 'ScrollDebt transforme votre défilement compulsif en un rappel brutal à la réalité.'
+    },
+    'de': {
+        title: 'ScrollDebt - Hol Dir Deine Zeit Zurück',
+        desc: 'ScrollDebt verwandelt dein endloses Scrollen in brutale Realitätschecks. Verfolge verschwendete Zeit, stelle dich sarkastischen Kommentaren und hol dir dein Leben zurück. 100% offline, keine Datenerfassung.',
+        ogDesc: 'ScrollDebt verwandelt dein endloses Scrollen in brutale Realitätschecks.'
+    }
+};
+
 // Ensure we don't accidentally delete important files, so we just build files
 const htmlFiles = ['index.html', 'how-it-works.html', 'privacy.html', 'changelog.html'];
 
@@ -33,7 +61,7 @@ function build() {
             // 2. Set HTML lang attribute
             $('html').attr('lang', lang);
 
-            // 3. Add hreflang tags to head
+            // 3. Add hreflang tags to head and update meta tags
             languages.forEach(l => {
                 const prefix = l === defaultLang ? '' : `${l}/`;
                 const href = `${baseUrl}${prefix}${file}`;
@@ -41,6 +69,17 @@ function build() {
             });
             // Add x-default
             $('head').append(`\n    <link rel="alternate" hreflang="x-default" href="${baseUrl}${file}" />`);
+
+            // Update meta tags and og:url
+            const currentPrefix = lang === defaultLang ? '' : `${lang}/`;
+            $('meta[property="og:url"]').attr('content', `${baseUrl}${currentPrefix}${file}`);
+            
+            if (metaTranslations[lang]) {
+                $('title').text(metaTranslations[lang].title);
+                $('meta[name="description"]').attr('content', metaTranslations[lang].desc);
+                $('meta[property="og:title"]').attr('content', metaTranslations[lang].title);
+                $('meta[property="og:description"]').attr('content', metaTranslations[lang].ogDesc);
+            }
 
             // 4. Update language switcher to be actual links
             const isSubdir = lang !== defaultLang;
