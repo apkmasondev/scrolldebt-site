@@ -639,6 +639,11 @@ main {
   margin-bottom: 2rem;
 }
 
+.pricing-price.text-price {
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
 .pricing-card ul {
   list-style: none;
   padding: 0;
@@ -880,6 +885,12 @@ footer {
   }
   .nav-link {
     font-size: 0.8rem;
+  }
+  .pricing-price {
+    font-size: 2rem;
+  }
+  .pricing-price.text-price {
+    font-size: 1.4rem;
   }
   .gallery {
     margin: 5rem 0;
