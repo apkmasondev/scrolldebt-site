@@ -63,6 +63,8 @@ const altTranslations = {
     'pl': {
         "ScrollDebt App Mockup": "Makieta Aplikacji ScrollDebt",
         "Brutal Truth Alert Mockup": "Makieta Powiadomienia Brutalnej Prawdy",
+        "Brutal Truth Concept": "Koncepcja Brutalnej Prawdy",
+        "Offline Privacy Concept": "Koncepcja Prywatności Offline",
         "Holy 7 Social Media Hourglass": "Klepsydra Świętej Siódemki",
         "ScrollDebt dark mode home screen displaying time limits": "Ekran główny w trybie ciemnym wyświetlający limity czasu",
         "Statistics view showing weekly doomscrolling trends": "Widok statystyk pokazujący tygodniowe trendy",
@@ -83,6 +85,8 @@ const altTranslations = {
     'es': {
         "ScrollDebt App Mockup": "Maqueta de la App ScrollDebt",
         "Brutal Truth Alert Mockup": "Maqueta de Alerta Verdad Brutal",
+        "Brutal Truth Concept": "Concepto de Verdad Brutal",
+        "Offline Privacy Concept": "Concepto de Privacidad Offline",
         "Holy 7 Social Media Hourglass": "Reloj de Arena de los 7 Santos",
         "ScrollDebt dark mode home screen displaying time limits": "Pantalla principal mostrando límites de tiempo",
         "Statistics view showing weekly doomscrolling trends": "Vista de estadísticas mostrando tendencias",
@@ -103,6 +107,8 @@ const altTranslations = {
     'fr': {
         "ScrollDebt App Mockup": "Maquette de l'Application ScrollDebt",
         "Brutal Truth Alert Mockup": "Maquette de l'Alerte Vérité Brutale",
+        "Brutal Truth Concept": "Concept de Vérité Brutale",
+        "Offline Privacy Concept": "Concept de Confidentialité Hors Ligne",
         "Holy 7 Social Media Hourglass": "Sablier des 7 Sacrés",
         "ScrollDebt dark mode home screen displaying time limits": "Écran d'accueil en mode sombre affichant les limites",
         "Statistics view showing weekly doomscrolling trends": "Statistiques montrant les tendances hebdomadaires",
@@ -123,6 +129,8 @@ const altTranslations = {
     'de': {
         "ScrollDebt App Mockup": "ScrollDebt App-Modell",
         "Brutal Truth Alert Mockup": "Brutale Wahrheit Alarm-Modell",
+        "Brutal Truth Concept": "Konzept der Brutalen Wahrheit",
+        "Offline Privacy Concept": "Offline-Datenschutz Konzept",
         "Holy 7 Social Media Hourglass": "Sanduhr der Heiligen 7",
         "ScrollDebt dark mode home screen displaying time limits": "Startbildschirm im dunklen Modus mit Zeitlimits",
         "Statistics view showing weekly doomscrolling trends": "Statistikansicht mit wöchentlichen Trends",
