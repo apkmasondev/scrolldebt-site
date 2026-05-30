@@ -9,30 +9,124 @@ const defaultLang = 'en';
 const baseUrl = 'https://apkmasondev.github.io/scrolldebt-site/';
 
 const metaTranslations = {
-    'en': {
-        title: 'ScrollDebt - Reclaim Your Time',
-        desc: 'ScrollDebt converts your mindless doomscrolling into brutal reality checks. Track wasted time, face sarcastic roasts, and reclaim your life. 100% offline, zero data collection.',
-        ogDesc: 'ScrollDebt converts your mindless doomscrolling into brutal reality checks.'
+    'index.html': {
+        'en': {
+            title: 'ScrollDebt - Reclaim Your Time',
+            desc: 'ScrollDebt converts your mindless doomscrolling into brutal reality checks. Track wasted time, face sarcastic roasts, and reclaim your life. 100% offline, zero data collection.',
+            ogDesc: 'ScrollDebt converts your mindless doomscrolling into brutal reality checks.'
+        },
+        'pl': {
+            title: 'ScrollDebt - Odzyskaj Swój Czas',
+            desc: 'ScrollDebt zamienia bezmyślne scrollowanie w brutalne zderzenie z rzeczywistością. Śledź zmarnowany czas, czytaj sarkastyczne komentarze i odzyskaj kontrolę nad życiem. W 100% offline, zero gromadzenia danych.',
+            ogDesc: 'ScrollDebt zamienia bezmyślne scrollowanie w brutalne zderzenie z rzeczywistością.'
+        },
+        'es': {
+            title: 'ScrollDebt - Recupera Tu Tiempo',
+            desc: 'ScrollDebt convierte tu adicción a la pantalla en duros golpes de realidad. Registra el tiempo perdido, enfrenta comentarios sarcásticos y recupera tu vida. 100% offline, sin recopilar datos.',
+            ogDesc: 'ScrollDebt convierte tu adicción a la pantalla en duros golpes de realidad.'
+        },
+        'fr': {
+            title: 'ScrollDebt - Reprenez Votre Temps',
+            desc: 'ScrollDebt transforme votre défilement compulsif en un rappel brutal à la réalité. Suivez le temps perdu, affrontez des remarques sarcastiques et reprenez votre vie en main. 100% hors ligne, aucune collecte de données.',
+            ogDesc: 'ScrollDebt transforme votre défilement compulsif en un rappel brutal à la réalité.'
+        },
+        'de': {
+            title: 'ScrollDebt - Hol Dir Deine Zeit Zurück',
+            desc: 'ScrollDebt verwandelt dein endloses Scrollen in brutale Realitätschecks. Verfolge verschwendete Zeit, stelle dich sarkastischen Kommentaren und hol dir dein Leben zurück. 100% offline, keine Datenerfassung.',
+            ogDesc: 'ScrollDebt verwandelt dein endloses Scrollen in brutale Realitätschecks.'
+        }
     },
+    'how-it-works.html': {
+        'en': { title: 'How It Works - ScrollDebt' },
+        'pl': { title: 'Jak to Działa - ScrollDebt' },
+        'es': { title: 'Cómo Funciona - ScrollDebt' },
+        'fr': { title: 'Comment ça Marche - ScrollDebt' },
+        'de': { title: 'Wie es Funktioniert - ScrollDebt' }
+    },
+    'privacy.html': {
+        'en': { title: 'Privacy Policy - ScrollDebt' },
+        'pl': { title: 'Polityka Prywatności - ScrollDebt' },
+        'es': { title: 'Política de Privacidad - ScrollDebt' },
+        'fr': { title: 'Politique de Confidentialité - ScrollDebt' },
+        'de': { title: 'Datenschutzerklärung - ScrollDebt' }
+    },
+    'changelog.html': {
+        'en': { title: 'Changelog - ScrollDebt' },
+        'pl': { title: 'Historia Wersji - ScrollDebt' },
+        'es': { title: 'Registro de Cambios - ScrollDebt' },
+        'fr': { title: 'Journal des Modifications - ScrollDebt' },
+        'de': { title: 'Änderungsprotokoll - ScrollDebt' }
+    }
+};
+
+const altTranslations = {
     'pl': {
-        title: 'ScrollDebt - Odzyskaj Swój Czas',
-        desc: 'ScrollDebt zamienia bezmyślne scrollowanie w brutalne zderzenie z rzeczywistością. Śledź zmarnowany czas, czytaj sarkastyczne komentarze i odzyskaj kontrolę nad życiem. W 100% offline, zero gromadzenia danych.',
-        ogDesc: 'ScrollDebt zamienia bezmyślne scrollowanie w brutalne zderzenie z rzeczywistością.'
+        "ScrollDebt App Mockup": "Makieta Aplikacji ScrollDebt",
+        "Brutal Truth Alert Mockup": "Makieta Powiadomienia Brutalnej Prawdy",
+        "ScrollDebt dark mode home screen displaying time limits": "Ekran główny w trybie ciemnym wyświetlający limity czasu",
+        "Statistics view showing weekly doomscrolling trends": "Widok statystyk pokazujący tygodniowe trendy",
+        "Wasted Potential analysis screen in dark mode": "Ekran analizy Zmarnowanego Potencjału w trybie ciemnym",
+        "App tracking selection interface with red accents": "Interfejs wyboru śledzonych aplikacji z czerwonymi akcentami",
+        "Tracking mode configuration with Sniper Mode options": "Konfiguracja trybu śledzenia z opcjami Trybu Snajpera",
+        "Brutal Truth push notification interrupting doomscrolling": "Powiadomienie Brutalnej Prawdy przerywające doomscrolling",
+        "ScrollDebt dashboard translated into Spanish": "Pulpit nawigacyjny ScrollDebt w języku hiszpańskim",
+        "Spanish language statistics and weekly tracking report": "Statystyki i raport w języku hiszpańskim",
+        "Settings screen displaying German localization": "Ekran ustawień z niemiecką lokalizacją",
+        "Light mode dashboard with active tracking limit": "Jasny motyw z aktywnym limitem śledzenia",
+        "Light mode interface for selecting tracked social apps": "Jasny interfejs wyboru aplikacji społecznościowych",
+        "Light mode Wasted Potential screen": "Jasny ekran Zmarnowanego Potencjału",
+        "Light mode Brutal Truth sarcastic messages screen": "Jasny ekran sarkastycznych wiadomości"
     },
     'es': {
-        title: 'ScrollDebt - Recupera Tu Tiempo',
-        desc: 'ScrollDebt convierte tu adicción a la pantalla en duros golpes de realidad. Registra el tiempo perdido, enfrenta comentarios sarcásticos y recupera tu vida. 100% offline, sin recopilar datos.',
-        ogDesc: 'ScrollDebt convierte tu adicción a la pantalla en duros golpes de realidad.'
+        "ScrollDebt App Mockup": "Maqueta de la App ScrollDebt",
+        "Brutal Truth Alert Mockup": "Maqueta de Alerta Verdad Brutal",
+        "ScrollDebt dark mode home screen displaying time limits": "Pantalla principal mostrando límites de tiempo",
+        "Statistics view showing weekly doomscrolling trends": "Vista de estadísticas mostrando tendencias",
+        "Wasted Potential analysis screen in dark mode": "Pantalla de análisis de Potencial Desperdiciado",
+        "App tracking selection interface with red accents": "Interfaz de selección con acentos rojos",
+        "Tracking mode configuration with Sniper Mode options": "Configuración de seguimiento con Modo Francotirador",
+        "Brutal Truth push notification interrupting doomscrolling": "Notificación interrumpiendo el doomscrolling",
+        "ScrollDebt dashboard translated into Spanish": "Panel traducido al español",
+        "Spanish language statistics and weekly tracking report": "Estadísticas e informe semanal en español",
+        "Settings screen displaying German localization": "Pantalla de configuración en alemán",
+        "Light mode dashboard with active tracking limit": "Panel en modo claro con límite activo",
+        "Light mode interface for selecting tracked social apps": "Interfaz en modo claro para seleccionar aplicaciones",
+        "Light mode Wasted Potential screen": "Pantalla de Potencial Desperdiciado en modo claro",
+        "Light mode Brutal Truth sarcastic messages screen": "Pantalla de mensajes sarcásticos en modo claro"
     },
     'fr': {
-        title: 'ScrollDebt - Reprenez Votre Temps',
-        desc: 'ScrollDebt transforme votre défilement compulsif en un rappel brutal à la réalité. Suivez le temps perdu, affrontez des remarques sarcastiques et reprenez votre vie en main. 100% hors ligne, aucune collecte de données.',
-        ogDesc: 'ScrollDebt transforme votre défilement compulsif en un rappel brutal à la réalité.'
+        "ScrollDebt App Mockup": "Maquette de l'Application ScrollDebt",
+        "Brutal Truth Alert Mockup": "Maquette de l'Alerte Vérité Brutale",
+        "ScrollDebt dark mode home screen displaying time limits": "Écran d'accueil en mode sombre affichant les limites",
+        "Statistics view showing weekly doomscrolling trends": "Statistiques montrant les tendances hebdomadaires",
+        "Wasted Potential analysis screen in dark mode": "Écran d'analyse du Potentiel Gâché en mode sombre",
+        "App tracking selection interface with red accents": "Interface de sélection avec des accents rouges",
+        "Tracking mode configuration with Sniper Mode options": "Configuration de suivi avec Mode Sniper",
+        "Brutal Truth push notification interrupting doomscrolling": "Notification interrompant le doomscrolling",
+        "ScrollDebt dashboard translated into Spanish": "Tableau de bord traduit en espagnol",
+        "Spanish language statistics and weekly tracking report": "Statistiques et rapport de suivi en espagnol",
+        "Settings screen displaying German localization": "Écran des paramètres affichant la traduction allemande",
+        "Light mode dashboard with active tracking limit": "Mode clair avec limite de suivi active",
+        "Light mode interface for selecting tracked social apps": "Interface claire pour sélectionner les applications",
+        "Light mode Wasted Potential screen": "Écran Potentiel Gâché en mode clair",
+        "Light mode Brutal Truth sarcastic messages screen": "Écran de messages sarcastiques en mode clair"
     },
     'de': {
-        title: 'ScrollDebt - Hol Dir Deine Zeit Zurück',
-        desc: 'ScrollDebt verwandelt dein endloses Scrollen in brutale Realitätschecks. Verfolge verschwendete Zeit, stelle dich sarkastischen Kommentaren und hol dir dein Leben zurück. 100% offline, keine Datenerfassung.',
-        ogDesc: 'ScrollDebt verwandelt dein endloses Scrollen in brutale Realitätschecks.'
+        "ScrollDebt App Mockup": "ScrollDebt App-Modell",
+        "Brutal Truth Alert Mockup": "Brutale Wahrheit Alarm-Modell",
+        "ScrollDebt dark mode home screen displaying time limits": "Startbildschirm im dunklen Modus mit Zeitlimits",
+        "Statistics view showing weekly doomscrolling trends": "Statistikansicht mit wöchentlichen Trends",
+        "Wasted Potential analysis screen in dark mode": "Bildschirm 'Verschwendetes Potenzial' im Dark Mode",
+        "App tracking selection interface with red accents": "Auswahlschnittstelle mit roten Akzenten",
+        "Tracking mode configuration with Sniper Mode options": "Konfiguration des Tracking-Modus mit Sniper-Optionen",
+        "Brutal Truth push notification interrupting doomscrolling": "Benachrichtigung unterbricht das Scrollen",
+        "ScrollDebt dashboard translated into Spanish": "Dashboard ins Spanische übersetzt",
+        "Spanish language statistics and weekly tracking report": "Statistiken und Tracking-Bericht auf Spanisch",
+        "Settings screen displaying German localization": "Einstellungsbildschirm mit deutscher Übersetzung",
+        "Light mode dashboard with active tracking limit": "Heller Modus mit aktivem Tracking-Limit",
+        "Light mode interface for selecting tracked social apps": "Helle Oberfläche zur Auswahl von Apps",
+        "Light mode Wasted Potential screen": "Heller Bildschirm für verschwendetes Potenzial",
+        "Light mode Brutal Truth sarcastic messages screen": "Heller Bildschirm für sarkastische Nachrichten"
     }
 };
 
@@ -74,11 +168,30 @@ function build() {
             const currentPrefix = lang === defaultLang ? '' : `${lang}/`;
             $('meta[property="og:url"]').attr('content', `${baseUrl}${currentPrefix}${file}`);
             
-            if (metaTranslations[lang]) {
-                $('title').text(metaTranslations[lang].title);
-                $('meta[name="description"]').attr('content', metaTranslations[lang].desc);
-                $('meta[property="og:title"]').attr('content', metaTranslations[lang].title);
-                $('meta[property="og:description"]').attr('content', metaTranslations[lang].ogDesc);
+            const fileMeta = metaTranslations[file];
+            if (fileMeta && fileMeta[lang]) {
+                const meta = fileMeta[lang];
+                $('title').text(meta.title);
+                $('meta[property="og:title"]').attr('content', meta.title);
+                
+                if (meta.desc) {
+                    $('meta[name="description"]').attr('content', meta.desc);
+                    $('meta[property="og:description"]').attr('content', meta.ogDesc);
+                } else {
+                    // if no custom desc (for subpages), we could leave it or clear it. Let's leave default or set empty
+                    $('meta[name="description"]').attr('content', '');
+                    $('meta[property="og:description"]').attr('content', '');
+                }
+            }
+
+            // Translate image alt tags if translation exists
+            if (lang !== 'en' && altTranslations[lang]) {
+                $('img').each((i, el) => {
+                    const originalAlt = $(el).attr('alt');
+                    if (originalAlt && altTranslations[lang][originalAlt]) {
+                        $(el).attr('alt', altTranslations[lang][originalAlt]);
+                    }
+                });
             }
 
             // 4. Update language switcher to be actual links
