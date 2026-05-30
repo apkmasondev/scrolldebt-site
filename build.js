@@ -75,7 +75,9 @@ const altTranslations = {
         "Light mode dashboard with active tracking limit": "Jasny motyw z aktywnym limitem śledzenia",
         "Light mode interface for selecting tracked social apps": "Jasny interfejs wyboru aplikacji społecznościowych",
         "Light mode Wasted Potential screen": "Jasny ekran Zmarnowanego Potencjału",
-        "Light mode Brutal Truth sarcastic messages screen": "Jasny ekran sarkastycznych wiadomości"
+        "Light mode Brutal Truth sarcastic messages screen": "Jasny ekran sarkastycznych wiadomości",
+        "ScrollDebt Today screen displaying 14 hours wasted": "Ekran główny ScrollDebt pokazujący 14 zmarnowanych godzin",
+        "ScrollDebt Today screen translated into German": "Ekran główny ScrollDebt przetłumaczony na język niemiecki"
     },
     'es': {
         "ScrollDebt App Mockup": "Maqueta de la App ScrollDebt",
@@ -92,7 +94,9 @@ const altTranslations = {
         "Light mode dashboard with active tracking limit": "Panel en modo claro con límite activo",
         "Light mode interface for selecting tracked social apps": "Interfaz en modo claro para seleccionar aplicaciones",
         "Light mode Wasted Potential screen": "Pantalla de Potencial Desperdiciado en modo claro",
-        "Light mode Brutal Truth sarcastic messages screen": "Pantalla de mensajes sarcásticos en modo claro"
+        "Light mode Brutal Truth sarcastic messages screen": "Pantalla de mensajes sarcásticos en modo claro",
+        "ScrollDebt Today screen displaying 14 hours wasted": "Pantalla principal de ScrollDebt mostrando 14 horas desperdiciadas",
+        "ScrollDebt Today screen translated into German": "Pantalla principal de ScrollDebt traducida al alemán"
     },
     'fr': {
         "ScrollDebt App Mockup": "Maquette de l'Application ScrollDebt",
@@ -109,7 +113,9 @@ const altTranslations = {
         "Light mode dashboard with active tracking limit": "Mode clair avec limite de suivi active",
         "Light mode interface for selecting tracked social apps": "Interface claire pour sélectionner les applications",
         "Light mode Wasted Potential screen": "Écran Potentiel Gâché en mode clair",
-        "Light mode Brutal Truth sarcastic messages screen": "Écran de messages sarcastiques en mode clair"
+        "Light mode Brutal Truth sarcastic messages screen": "Écran de messages sarcastiques en mode clair",
+        "ScrollDebt Today screen displaying 14 hours wasted": "Écran d'accueil ScrollDebt affichant 14 heures gaspillées",
+        "ScrollDebt Today screen translated into German": "Écran d'accueil ScrollDebt traduit en allemand"
     },
     'de': {
         "ScrollDebt App Mockup": "ScrollDebt App-Modell",
@@ -126,7 +132,9 @@ const altTranslations = {
         "Light mode dashboard with active tracking limit": "Heller Modus mit aktivem Tracking-Limit",
         "Light mode interface for selecting tracked social apps": "Helle Oberfläche zur Auswahl von Apps",
         "Light mode Wasted Potential screen": "Heller Bildschirm für verschwendetes Potenzial",
-        "Light mode Brutal Truth sarcastic messages screen": "Heller Bildschirm für sarkastische Nachrichten"
+        "Light mode Brutal Truth sarcastic messages screen": "Heller Bildschirm für sarkastische Nachrichten",
+        "ScrollDebt Today screen displaying 14 hours wasted": "ScrollDebt Startbildschirm mit 14 verschwendeten Stunden",
+        "ScrollDebt Today screen translated into German": "ScrollDebt Startbildschirm ins Deutsche übersetzt"
     }
 };
 
