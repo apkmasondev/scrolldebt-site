@@ -897,6 +897,18 @@ footer {
     margin: 5rem 0;
   }
 
+  .support {
+    padding: 3rem 1.5rem;
+    margin: 3rem 5%;
+  }
+  .support h2 {
+    font-size: 1.6rem;
+  }
+  .support p {
+    font-size: 0.95rem;
+  }
+}
+
 /* ===== COOKIE BANNER ===== */
 .cookie-banner {
   position: fixed;
@@ -923,15 +935,5 @@ footer {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
-  }
-}  .support {
-    padding: 3rem 1.5rem;
-    margin: 3rem 5%;
-  }
-  .support h2 {
-    font-size: 1.6rem;
-  }
-  .support p {
-    font-size: 0.95rem;
   }
 }
