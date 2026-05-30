@@ -137,7 +137,7 @@ header {
   gap: 4px;
 }
 
-.lang-switcher button {
+.lang-switcher .lang-btn {
   background: transparent;
   color: var(--muted);
   border: 1px solid transparent;
@@ -147,9 +147,10 @@ header {
   font-family: inherit;
   font-size: 0.85rem;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
-.lang-switcher button:hover, .lang-switcher button.active {
+.lang-switcher .lang-btn:hover, .lang-switcher .lang-btn.active {
   color: var(--text);
   border-color: var(--border);
   background: var(--surface);
@@ -895,7 +896,35 @@ footer {
   .gallery {
     margin: 5rem 0;
   }
-  .support {
+
+/* ===== COOKIE BANNER ===== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 800px;
+}
+@media (max-width: 768px) {
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}  .support {
     padding: 3rem 1.5rem;
     margin: 3rem 5%;
   }
