@@ -831,7 +831,10 @@ footer {
     margin-left: auto;
   }
   .lang-switcher {
-    order: 2;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
   }
   .main-nav {
     display: none;
@@ -840,7 +843,7 @@ footer {
     justify-content: center;
     width: 100%;
     gap: 1.2rem;
-    order: 3;
+    order: 4;
     padding-top: 1rem;
     border-top: 1px solid var(--border);
     margin-top: 0.5rem;
