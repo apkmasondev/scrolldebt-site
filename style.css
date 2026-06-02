@@ -906,15 +906,15 @@ footer {
     display: none; /* Hide buttons on mobile, swipe is natural */
   }
   footer {
-    align-items: flex-end;
+    align-items: flex-start;
   }
   .footer-links {
     flex-direction: column;
     gap: 0.8rem;
-    align-items: flex-end;
+    align-items: flex-start;
   }
   .footer-copy {
-    text-align: right;
+    text-align: left;
   }
   .pricing-grid {
     grid-template-columns: 1fr;
