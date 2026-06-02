@@ -905,10 +905,16 @@ footer {
   .gallery-btn {
     display: none; /* Hide buttons on mobile, swipe is natural */
   }
+  footer {
+    align-items: flex-end;
+  }
   .footer-links {
     flex-direction: column;
     gap: 0.8rem;
-    align-items: center;
+    align-items: flex-end;
+  }
+  .footer-copy {
+    text-align: right;
   }
   .pricing-grid {
     grid-template-columns: 1fr;
