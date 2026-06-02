@@ -129,6 +129,10 @@ header {
 }
 
 /* ===== LANGUAGE SWITCHER ===== */
+.hamburger {
+  display: none;
+}
+
 .lang-switcher {
   display: flex;
   flex-wrap: wrap;
@@ -810,16 +814,39 @@ footer {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
   header {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1.2rem 5%;
+    align-items: center;
+  }
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.8rem;
+    cursor: pointer;
+    order: 1;
+    margin-left: auto;
+  }
+  .lang-switcher {
+    order: 2;
   }
   .main-nav {
+    display: none;
+    flex-direction: column;
     margin-left: 0;
     justify-content: center;
     width: 100%;
     gap: 1.2rem;
-    flex-wrap: wrap;
+    order: 3;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+  }
+  header.menu-open .main-nav {
+    display: flex;
   }
   .hero {
     flex-direction: column;

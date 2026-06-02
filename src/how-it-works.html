@@ -47,6 +47,7 @@
             <button id="btn-de" aria-label="Switch to German">DE</button>
             <button id="btn-pl" aria-label="Switch to Polish">PL</button>
         </div>
+        <button class="hamburger" aria-label="Toggle menu">☰</button>
     </header>
 
     <main style="padding-top: 4rem;">
@@ -364,6 +365,14 @@
                        : supported.includes(browser) ? browser 
                        : 'en';
             setLang(lang);
+            // Hamburger Menu
+            const hamburger = document.querySelector('.hamburger');
+            const header = document.querySelector('header');
+            if (hamburger && header) {
+                hamburger.addEventListener('click', () => {
+                    header.classList.toggle('menu-open');
+                });
+            }
         });
     </script>
 </body>
