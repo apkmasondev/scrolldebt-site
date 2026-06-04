@@ -827,15 +827,15 @@ footer {
     display: none; /* Hide buttons on mobile, swipe is natural */
   }
   footer {
-    align-items: flex-start;
+    align-items: center;
   }
   .footer-links {
     flex-direction: column;
     gap: 0.8rem;
-    align-items: flex-start;
+    align-items: center;
   }
   .footer-copy {
-    text-align: left;
+    text-align: center;
   }
   .content-block {
     padding: 2rem;
