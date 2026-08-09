@@ -217,13 +217,30 @@ function build() {
             const isSubdir = lang !== defaultLang;
             const upPrefix = isSubdir ? '../' : '';
             
-            let switcherHtml = '';
+            // The switcher is a dropdown behind a globe, matching the language control in the
+            // app itself. The trigger keeps the current language visible so the state is
+            // readable without opening the menu.
+            let menuHtml = '';
             languages.forEach(l => {
                 const targetPrefix = l === defaultLang ? upPrefix : (isSubdir ? `../${l}/` : `${l}/`);
                 const activeClass = l === lang ? ' active' : '';
-                switcherHtml += `\n            <a href="${targetPrefix}${file}" class="lang-btn${activeClass}">${l.toUpperCase()}</a>`;
+                // hreflang + lang tell crawlers and screen readers what each target actually is.
+                menuHtml +=
+                    `\n                <a href="${targetPrefix}${file}" class="lang-btn${activeClass}"` +
+                    ` hreflang="${l}" lang="${l}" role="menuitem">${l.toUpperCase()}</a>`;
             });
-            $('.lang-switcher').html(switcherHtml);
+
+            $('.lang-switcher').html(
+                `\n            <button class="lang-toggle" aria-label="Change language" aria-haspopup="true" aria-expanded="false">` +
+                `\n                <svg class="lang-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">` +
+                `\n                    <circle cx="12" cy="12" r="9"/>` +
+                `\n                    <ellipse cx="12" cy="12" rx="4" ry="9"/>` +
+                `\n                    <path d="M3.5 9h17M3.5 15h17"/>` +
+                `\n                </svg>` +
+                `\n                <span class="lang-current">${lang.toUpperCase()}</span>` +
+                `\n            </button>` +
+                `\n            <div class="lang-menu" role="menu">${menuHtml}\n            </div>\n        `
+            );
 
             // 5. Update asset links if in subdirectory
             if (isSubdir) {
@@ -258,7 +275,29 @@ function build() {
                 if (scriptContent.includes('setLang(') || scriptContent.includes('scrolldebt-lang')) {
                     // Replace with a simpler script just for gallery scroll and cookies
                     $(el).html(`
+        document.documentElement.classList.add('has-js');
         window.addEventListener('DOMContentLoaded', () => {
+            // Language dropdown (globe). See .has-js in style.css for the no-JS fallback.
+            const langSwitcher = document.querySelector('.lang-switcher');
+            const langToggle = langSwitcher && langSwitcher.querySelector('.lang-toggle');
+            if (langSwitcher && langToggle) {
+                const closeLang = () => {
+                    langSwitcher.classList.remove('open');
+                    langToggle.setAttribute('aria-expanded', 'false');
+                };
+                langToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const open = langSwitcher.classList.toggle('open');
+                    langToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+                document.addEventListener('click', (e) => {
+                    if (!langSwitcher.contains(e.target)) closeLang();
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') { closeLang(); langToggle.blur(); }
+                });
+            }
+
             // Gallery Scroll Buttons
             const scroll = document.getElementById('galleryScroll');
             const btnPrev = document.querySelector('.gallery-btn.prev');

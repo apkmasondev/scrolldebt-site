@@ -60,11 +60,22 @@
             
         </nav>
         <div class="lang-switcher">
-            <a href="index.html" class="lang-btn active">EN</a>
-            <a href="es/index.html" class="lang-btn">ES</a>
-            <a href="fr/index.html" class="lang-btn">FR</a>
-            <a href="de/index.html" class="lang-btn">DE</a>
-            <a href="pl/index.html" class="lang-btn">PL</a></div>
+            <button class="lang-toggle" aria-label="Change language" aria-haspopup="true" aria-expanded="false">
+                <svg class="lang-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <ellipse cx="12" cy="12" rx="4" ry="9"></ellipse>
+                    <path d="M3.5 9h17M3.5 15h17"></path>
+                </svg>
+                <span class="lang-current">EN</span>
+            </button>
+            <div class="lang-menu" role="menu">
+                <a href="index.html" class="lang-btn active" hreflang="en" lang="en" role="menuitem">EN</a>
+                <a href="es/index.html" class="lang-btn" hreflang="es" lang="es" role="menuitem">ES</a>
+                <a href="fr/index.html" class="lang-btn" hreflang="fr" lang="fr" role="menuitem">FR</a>
+                <a href="de/index.html" class="lang-btn" hreflang="de" lang="de" role="menuitem">DE</a>
+                <a href="pl/index.html" class="lang-btn" hreflang="pl" lang="pl" role="menuitem">PL</a>
+            </div>
+        </div>
         <button class="hamburger" aria-label="Toggle menu">☰</button>
     </header>
 
@@ -284,7 +295,29 @@
     </footer>
 
     <script>
+        document.documentElement.classList.add('has-js');
         window.addEventListener('DOMContentLoaded', () => {
+            // Language dropdown (globe). See .has-js in style.css for the no-JS fallback.
+            const langSwitcher = document.querySelector('.lang-switcher');
+            const langToggle = langSwitcher && langSwitcher.querySelector('.lang-toggle');
+            if (langSwitcher && langToggle) {
+                const closeLang = () => {
+                    langSwitcher.classList.remove('open');
+                    langToggle.setAttribute('aria-expanded', 'false');
+                };
+                langToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const open = langSwitcher.classList.toggle('open');
+                    langToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+                document.addEventListener('click', (e) => {
+                    if (!langSwitcher.contains(e.target)) closeLang();
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') { closeLang(); langToggle.blur(); }
+                });
+            }
+
             // Gallery Scroll Buttons
             const scroll = document.getElementById('galleryScroll');
             const btnPrev = document.querySelector('.gallery-btn.prev');

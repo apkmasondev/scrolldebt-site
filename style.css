@@ -133,31 +133,102 @@ header {
   display: none;
 }
 
+/* Language picker: a globe trigger with a dropdown, mirroring the control in the app.
+   Five always-visible codes used to compete with the nav for space on desktop and wrap
+   onto their own full-width row on mobile. */
 .lang-switcher {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  position: relative;
   flex-shrink: 0;
-  gap: 4px;
 }
 
-.lang-switcher .lang-btn {
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   background: transparent;
   color: var(--muted);
   border: 1px solid transparent;
   padding: 0.35rem 0.6rem;
-  cursor: pointer;
   border-radius: 8px;
+  cursor: pointer;
   font-family: inherit;
   font-size: 0.85rem;
-  transition: all 0.2s ease;
-  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.lang-switcher .lang-btn:hover, .lang-switcher .lang-btn.active {
+.lang-toggle:hover,
+.lang-switcher.open .lang-toggle {
   color: var(--text);
   border-color: var(--border);
   background: var(--surface);
+}
+
+.lang-icon {
+  flex-shrink: 0;
+}
+
+.lang-current {
+  letter-spacing: 0.05em;
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  min-width: 5.5rem;
+  padding: 4px;
+  gap: 2px;
+  /* Solid, not var(--surface): that is a translucent white, so page content showed straight
+     through the open menu and made the language codes hard to read. */
+  background: #131316;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  /* Hidden by default; visibility (not display) so the open state can transition. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+/* .open is set by JS. The :focus-within fallback is scoped to documents where the script did
+   not run (it adds .has-js to <html>), otherwise focus would hold the menu open and fight the
+   click-to-close toggle. Without JS the picker still works. */
+.lang-switcher.open .lang-menu,
+html:not(.has-js) .lang-switcher:focus-within .lang-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-menu .lang-btn {
+  display: block;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.lang-menu .lang-btn:hover,
+.lang-menu .lang-btn:focus-visible {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.lang-menu .lang-btn.active {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 /* ===== LANGUAGE SWITCHING SYSTEM ===== */
@@ -748,14 +819,14 @@ footer {
     color: var(--text);
     font-size: 1.8rem;
     cursor: pointer;
+    order: 2;
+    margin-left: 0.25rem;
+  }
+  /* Sits inline beside the hamburger. As five separate codes it needed a full-width row of
+     its own below the header; collapsed to one globe it no longer does. */
+  .lang-switcher {
     order: 1;
     margin-left: auto;
-  }
-  .lang-switcher {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    margin-top: 0.5rem;
   }
   .main-nav {
     display: none;
