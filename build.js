@@ -178,6 +178,13 @@ function build() {
 
             // Update meta tags and og:url
             const currentPrefix = lang === defaultLang ? '' : `${lang}/`;
+
+            // Self-referencing canonical. Every locale serves near-identical markup and the
+            // same screenshots, so without this the five variants compete with each other for
+            // the same queries and Google picks a canonical on its own.
+            $('link[rel="canonical"]').remove();
+            $('head').append(`\n    <link rel="canonical" href="${baseUrl}${currentPrefix}${file}" />`);
+
             $('meta[property="og:url"]').attr('content', `${baseUrl}${currentPrefix}${file}`);
             
             const fileMeta = metaTranslations[file];
@@ -232,6 +239,16 @@ function build() {
                 $('link[rel="icon"]').each((i, el) => {
                     const href = $(el).attr('href');
                     if (href && !href.startsWith('http')) $(el).attr('href', '../' + href);
+                });
+                // Download anchors (the APK). These were missing from the rewrite, so every
+                // localised page linked to e.g. /es/releases/... and the download button -
+                // the primary call to action - returned 404 in four of the five languages.
+                // Page-to-page nav links are handled separately above and must not be touched.
+                $('a[download]').each((i, el) => {
+                    const href = $(el).attr('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('../')) {
+                        $(el).attr('href', '../' + href);
+                    }
                 });
             }
 

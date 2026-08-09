@@ -9,3 +9,12 @@ dist-ssr/
 .vscode/
 .idea/
 .DS_Store
+
+# Android build artefacts and signing secrets must never land in this repo.
+# Only the published, signed APK under releases/ belongs here.
+*.jks
+*.keystore
+keystore.properties
+build/
+.gradle/
+local.properties
