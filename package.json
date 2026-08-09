@@ -20,5 +20,8 @@
   "homepage": "https://github.com/apkmasondev/scrolldebt-site#readme",
   "dependencies": {
     "cheerio": "^1.2.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
   }
 }
